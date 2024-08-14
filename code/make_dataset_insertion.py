@@ -5,6 +5,8 @@ import numpy as np
 # Define paths
 input_folder = "/home/bonggeeun/team_project/ceti-glove-main/cetiglove/dataset"
 output_dir = "/home/bonggeeun/team_project/diffusion_model/Imitating-Human-Behaviour-w-Diffusion-main/code/dataset_insertion"
+#input_folder = "D:\TUD\Team Project Robot\code\dataset"
+#output_dir = "dataset_insertion"
 output_file_robot_hand = os.path.join(output_dir, "actions.npy")
 output_file_images = os.path.join(output_dir, "images.npy")
 output_file_images_small = os.path.join(output_dir, "images_small.npy")
@@ -35,7 +37,7 @@ for subdir in sorted(os.listdir(input_folder)):
     subdir_path = os.path.join(input_folder, subdir)
     if os.path.isdir(subdir_path):
         # Path to the robot_hand.npy file in the subdirectory
-        npy_file_path = os.path.join(subdir_path, "robot_hand.npy")
+        npy_file_path = os.path.join(subdir_path, "robot_action.npy")
         
         # Check if the file exists
         if os.path.exists(npy_file_path):
