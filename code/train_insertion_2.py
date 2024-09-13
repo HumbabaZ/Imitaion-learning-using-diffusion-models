@@ -157,7 +157,7 @@ def train_claw(experiment, n_epoch, lrate, device, n_hidden, batch_size, n_T, ne
 
     # create model
     if model_type == "diffusion":
-        nn_model = Custom_Model_cnn_mlp(
+        nn_model = Model_cnn_mlp(
             x_shape, n_hidden, y_dim, embed_dim=128, net_type=net_type
         ).to(device)
         model = Model_Cond_Diffusion(

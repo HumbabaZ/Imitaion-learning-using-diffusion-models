@@ -3,10 +3,10 @@ import cv2
 import numpy as np
 
 # Define paths
-input_folder = "/home/bonggeeun/team_project/ceti-glove-main/cetiglove/dataset"
-output_dir = "/home/bonggeeun/team_project/diffusion_model/Imitating-Human-Behaviour-w-Diffusion-main/code/dataset_insertion"
-#input_folder = "D:\TUD\Team Project Robot\code\dataset"
-#output_dir = "dataset_insertion"
+#input_folder = "/home/bonggeeun/team_project/ceti-glove-main/cetiglove/dataset"
+#output_dir = "/home/bonggeeun/team_project/diffusion_model/Imitating-Human-Behaviour-w-Diffusion-main/code/dataset_insertion"
+input_folder = "D:\TUD\Team Project Robot\code\dataset_new"
+output_dir = "dataset_insertion"
 output_file_robot_hand = os.path.join(output_dir, "actions.npy")
 output_file_images = os.path.join(output_dir, "images.npy")
 output_file_images_small = os.path.join(output_dir, "images_small.npy")
@@ -37,7 +37,7 @@ for subdir in sorted(os.listdir(input_folder)):
     subdir_path = os.path.join(input_folder, subdir)
     if os.path.isdir(subdir_path):
         # Path to the robot_hand.npy file in the subdirectory
-        npy_file_path = os.path.join(subdir_path, "robot_action.npy")
+        npy_file_path = os.path.join(subdir_path, "robot_hand.npy")
         
         # Check if the file exists
         if os.path.exists(npy_file_path):
@@ -50,9 +50,10 @@ for subdir in sorted(os.listdir(input_folder)):
             print(f"robot_hand.npy not found in {subdir_path}")
         
         # Process .png files within the same subdirectory
-        for filename in sorted(os.listdir(subdir_path)):
-            if filename.lower().endswith(".png"):
-                img_path = os.path.join(subdir_path, filename)
+        subdir_image_path= os.path.join(subdir_path, 'images')
+        for filename in sorted(os.listdir(subdir_image_path)):
+            if filename.lower().endswith(".jpg"):
+                img_path = os.path.join(subdir_image_path, filename)
                 image = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
 
                 # If the image was successfully loaded
