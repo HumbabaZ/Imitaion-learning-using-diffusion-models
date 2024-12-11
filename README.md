@@ -1,8 +1,8 @@
+This repository is forked from https://github.com/microsoft/Imitating-Human-Behaviour-w-Diffusion.
+
 # Imitating human behaviour with diffusion models
 
 Code from ICLR 2023 paper 'Imitating human behaviour with diffusion models' - https://arxiv.org/abs/2301.10677
-
-<img height="250" src="overview_01.png">
 
 This code currently only replicates the claw environment experiments of the paper. We plan to update this with other experiments soon.
 
