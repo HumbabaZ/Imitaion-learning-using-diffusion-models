@@ -1,4 +1,6 @@
-This repository is forked from https://github.com/microsoft/Imitating-Human-Behaviour-w-Diffusion.
+This is the Research Project of TU Dresden's CMS program. We use the model to generate action sequences for real robots. The dataset is from the expert  trajectories we collected with Ceti-glove and XARM7 robotic arm. 
+
+This repository is based on https://github.com/microsoft/Imitating-Human-Behaviour-w-Diffusion. 
 
 # Imitating human behaviour with diffusion models
 
